@@ -46,6 +46,28 @@ Only Keith (the owner) can edit this file.
 - Every agent must have a named identity. No anonymous agents.
 - MaybeTech template changes require owner approval before push.
 
+## Conflict Resolution Rules — The 3 Absolute Laws
+
+These rules govern ALL agent behavior across the entire fleet. No exception. No override.
+
+### RULE 0: SINGLE VOICE LAW
+Only one agent may generate an outbound response to a lead at any time. If two agents are triggered simultaneously, the Orchestrator resolves based on the Precedence Ladder. No lead ever receives two messages from two agents in the same interaction window.
+
+### RULE 1: STATE > CONTENT
+Agents are selected by the lead's PIPELINE STATE, not by message content. If a lead is in the "Engaged" state, the Discovery Agent handles them — even if their message contains an objection. Content analysis is secondary to state. The only exception: explicit opt-out language ("stop", "remove me", "not interested") always routes to the Exit Agent regardless of state.
+
+### RULE 2: PRECEDENCE LADDER
+When conflict occurs, this hierarchy resolves it (highest priority first):
+1. System Stops (opt-out, compliance flags, rate limits)
+2. Reminder Agent (protecting existing appointments)
+3. Scheduling Agent (active booking in progress)
+4. Discovery Agent (active conversation)
+5. Objection Agent (resistance handling)
+6. Clarity & Education Agent (content delivery)
+7. Reach Out Agent (initial contact)
+
+The Orchestrator enforces this ladder. No agent self-promotes above its precedence level.
+
 ## Soft Rules (agent can adapt these via Evolution Loop)
 
 - Be direct and concise. No sycophantic openers.

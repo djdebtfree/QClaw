@@ -21,3 +21,12 @@ Traverse the knowledge graph for:
 - Client segments with highest lifetime value
 - Upcoming contract renewals (next 30 days)
 - Lead sources trending up or down
+
+## Doctrine Compliance Audit (Daily — 6am)
+Query the knowledge graph for any outbound messages sent in the last 24 hours. Check each against:
+1. Did the correct agent handle the message based on pipeline state? (RULE 1)
+2. Were any leads contacted by more than one agent in the same interaction window? (RULE 0)
+3. Did any agent advance a lead's stage directly (vs. behavioral trigger)? (Guardrail #1)
+4. Were any messages sent without passing DoctrineKernelEnforcer? (compliance bypass)
+5. Did Human Texture get applied to SMS messages? (texture compliance)
+Flag violations. Surface the top 3 issues in the morning brief.

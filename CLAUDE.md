@@ -112,3 +112,22 @@ When a task requires interacting with a web UI that has no API (GHL Trust Center
 - **Railway:** Production deployment target for QClaw + Cognee + Qdrant
 - **Make (automation):** Webhook-driven heartbeat events can trigger Make scenarios
 - **VAPI:** Voice AI pipeline for inbound/outbound calls via Sandy Beach squad
+
+## 10-Agent Target Architecture
+
+The current beta runs Sandy Beach as a single agent with 5 modes. The target architecture decomposes her into 10 specialized agents with strict jurisdictions.
+
+Reference document: docs/10-AGENT-ARCHITECTURE.md
+
+### Key Governance Rules (from VALUES.md)
+- RULE 0: SINGLE VOICE LAW — one agent speaks at a time
+- RULE 1: STATE > CONTENT — pipeline state determines which agent handles, not message content
+- RULE 2: PRECEDENCE LADDER — system stops > reminder > scheduling > discovery > objection > education > reach out
+
+### Canonical Texts
+First 3 texts for new leads use the Human Texture Layer: intentional lowercase, natural typos, casual tone.
+Reference: workspace/agents/sandy-beach/canonical-texts/FIRST-3-TEXTS.md
+
+### Human Texture
+SMS messages pass through the Human Texture utility before sending. Never applied to email, voice, or Telegram.
+Reference: workspace/agents/sandy-beach/skills/human-texture/SKILL.md
