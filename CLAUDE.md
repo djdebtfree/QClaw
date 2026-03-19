@@ -74,15 +74,36 @@ npx qclaw agex status       # Credential protocol status
 
 - QClaw runtime: forked, customized with SalesSuiteOS doctrine
 - Sandy Beach soul: written, mapped to 5 operational modes
-- GHL skill: written, ready for API key configuration
-- Data Driver skill: written, needs Supabase key wiring
-- Pipeline Lite skill: written, needs Supabase key wiring
-- Knowledge graph: needs Cognee + Qdrant deployment (Docker or Railway)
-- AGEX Hub: optional, local secrets work fine for single-operator
+- GHL skill: written, PIT token wired via MCP
+- Data Driver skill: written, needs Supabase key wiring to QClaw secrets
+- Pipeline Lite skill: written, needs Supabase key wiring to QClaw secrets
+- VAPI skill: written, voice agent scripts ready
+- Knowledge graph: Cognee + Qdrant running locally (Docker)
+- AGEX Hub: connected
+- Telegram: @pipelinelite_bot paired
 
 ## Named Gap (Priority)
 
 Sandy Beach's granular conversation playbook — the message-by-message language and emotional sequencing that transfers belief. The Head → Heart → Gut → Shoes framework is documented in SOUL.md. The knowledge graph provides the infrastructure. The actual message templates and branching logic need to be built as graph traversal paths.
+
+## MCP Connectors Available
+
+The following MCP servers are connected and available for use:
+- **GoHighLevel:** Contact management, pipelines, calendars, conversations, workflows (PIT: agency-level)
+- **Supabase:** Database operations on Pipeline Lite DB and Data Driver DB
+- **Stripe:** Payment and subscription tracking
+- **Make:** Webhook-driven automation scenarios
+- **Vercel:** Deployment management
+- **Windsor.ai:** Cross-platform marketing analytics
+- **Firebase:** Backend services
+- **ElevenLabs:** Voice synthesis for Sandy Beach
+- **Perplexity:** Web-grounded research and fact-checking
+- **Apify:** Web scraping and data extraction
+- **Context7:** Real-time library documentation
+
+## Chrome Browser Usage
+
+When a task requires interacting with a web UI that has no API (GHL Trust Center, manual service configurations), use Chrome browser automation via the Claude in Chrome tools. Always ask before navigating to authenticated pages.
 
 ## Integration Points
 
@@ -90,3 +111,4 @@ Sandy Beach's granular conversation playbook — the message-by-message language
 - **GHL workflows:** Read-only access for monitoring; write requires owner approval
 - **Railway:** Production deployment target for QClaw + Cognee + Qdrant
 - **Make (automation):** Webhook-driven heartbeat events can trigger Make scenarios
+- **VAPI:** Voice AI pipeline for inbound/outbound calls via Sandy Beach squad
