@@ -1,16 +1,16 @@
 {
-  "pipelineId": "PENDING_MANUAL_CREATION",
-  "pipelineName": "SalesSuiteOS Pipeline",
+  "pipelineId": "wxoAOK63EtdQouyiGZDf",
+  "pipelineName": "SalesSuiteOS",
   "locationId": "LjgmqjZskwMKTIcGOnvM",
   "stages": {
-    "New Lead": "PENDING",
-    "Data Verified": "PENDING",
-    "Outreach Sent": "PENDING",
-    "Engaged": "PENDING",
-    "Appointment Booked": "PENDING",
-    "Showed Up": "PENDING",
-    "Closed Won": "PENDING",
-    "Closed Lost": "PENDING"
+    "New Lead": "a2d68ddc-aef7-4c0a-bbb8-55d66dd913cc",
+    "Data Verified": "f68e918e-6fba-4c1f-bb26-45b9a72f10d1",
+    "Outreach Sent": "cb59ffc6-a5ca-4879-b231-02dec9268136",
+    "Engaged": "0df7febb-dd0f-4e23-9bfe-443247143744",
+    "Appointment Booked": "a317bf77-d4e4-4a67-afdf-ed108a0a6c40",
+    "Showed Up": "eca6a69b-e68f-42ab-af75-680638de68b9",
+    "Closed Won": "6dbf0540-4df8-4d4f-8c9e-b2ff9fbab450",
+    "Closed Lost": "4194e909-a489-4fe1-9d18-f7fb3b7b8168"
   },
   "stageOrder": [
     "New Lead",
@@ -22,6 +22,6 @@
     "Closed Won",
     "Closed Lost"
   ],
-  "createdAt": "2026-03-19T16:27:45.891Z",
-  "source": "placeholder"
+  "createdAt": "2026-03-19T19:43:03.710Z",
+  "source": "fetched"
 }
