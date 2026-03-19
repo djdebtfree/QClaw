@@ -1,0 +1,22 @@
+{
+  "name": "pipeline-lite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node sync-leads.js",
+    "pipeline:create": "node create-pipeline.js",
+    "pipeline:fetch": "node create-pipeline.js --fetch",
+    "move": "node move-stage.js",
+    "appointments": "node check-appointments.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.3",
+    "dotenv": "^17.3.1",
+    "node-fetch": "^2.7.0"
+  }
+}
