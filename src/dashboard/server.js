@@ -229,7 +229,8 @@ export class DashboardServer {
 
     this.app.use((req, res, next) => {
       // Skip auth for HTML pages, health check, and PIN verify endpoint
-      if (req.path === '/' || req.path === '/onboard' || req.path === '/favicon.ico' || 
+      if (req.path === '/' || req.path === '/onboard' || req.path === '/favicon.ico' ||
+          req.path === '/health' || req.path === '/ping' ||
           req.path === '/api/health' || req.path === '/api/auth/verify-pin') return next();
 
       const ip = req.ip || req.socket.remoteAddress;
@@ -321,6 +322,15 @@ export class DashboardServer {
     });
 
     // Health endpoint is always open (for Docker health checks, monitoring)
+    // Unauthenticated health check endpoints for Railway monitoring
+    this.app.get('/ping', (req, res) => {
+      res.json({ status: 'ok', service: 'qclaw-salessuiteos', timestamp: new Date().toISOString() });
+    });
+
+    this.app.get('/health', (req, res) => {
+      res.json({ status: 'ok', service: 'qclaw-salessuiteos', timestamp: new Date().toISOString() });
+    });
+
     this.app.get('/api/health', (req, res) => {
       res.json({
         status: 'running',

@@ -62,7 +62,12 @@ export class SecretStore {
   }
 
   get(key) {
-    return this.secrets[key] || null;
+    // Check encrypted store first, then fall back to environment variables
+    // Env var mapping: "anthropic_api_key" -> ANTHROPIC_API_KEY
+    if (this.secrets[key]) return this.secrets[key];
+    const envKey = key.toUpperCase();
+    if (process.env[envKey]) return process.env[envKey];
+    return null;
   }
 
   set(key, value) {
