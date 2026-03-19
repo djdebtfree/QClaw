@@ -1,0 +1,22 @@
+{
+  "name": "vapi-sandy",
+  "version": "1.0.0",
+  "main": "webhook-handler.js",
+  "scripts": {
+    "create-assistant": "node create-sandy-assistant.js",
+    "webhook": "node webhook-handler.js",
+    "dial": "node auto-dialer.js",
+    "schedule": "node schedule-calls.js",
+    "schedule:loop": "node schedule-calls.js --loop",
+    "context": "node context-loader.js"
+  },
+  "keywords": ["vapi", "sandy-beach", "salessuiteOS", "voice-ai"],
+  "author": "Keith Fonseca",
+  "license": "ISC",
+  "description": "Sandy Beach VAPI voice assistant for SalesSuiteOS - auto-dialer, context loader, webhook handler, scheduler",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^2.7.0"
+  }
+}
