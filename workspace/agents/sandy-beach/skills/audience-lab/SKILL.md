@@ -51,3 +51,33 @@ Key verticals: GHL Agencies, SaaS Seekers, Remote Sales Work, Insurance (Life, H
 4. Filter: has email + has phone + NOT DNC
 5. Sync qualified leads to GHL via Pipeline Lite sync-leads.js
 6. Sandy begins outreach sequence via auto-dialer or SMS
+
+## Audience Creation (via Playwright Automation)
+
+Sandy can create new audiences on demand using headless browser automation.
+
+### Command
+```bash
+cd ~/QClaw/integrations/audience-lab && node create-audience.js "keyword description"
+```
+
+### How It Works
+1. Sandy generates a smart audience name from the keyword description (not literal text)
+2. Playwright logs into Audience Lab headlessly
+3. Creates audience with Keyword method
+4. Uses AI Intent Keyword Generator with the provided description
+5. Always selects HIGH intent score
+6. Generates the audience and waits for hydration
+
+### Naming Convention
+- "insurance sales people seeking crm" -> "Insurance CRM Seekers"
+- "solar panel installers in florida" -> "Solar Installation Seekers"
+- "ai tools for marketing agencies" -> "AI Technology Seekers"
+- Names are auto-generated based on keyword patterns, NEVER use literal user text
+
+### Rules for Creation
+1. Always describe the audience intent clearly -- the AI keyword generator needs good input
+2. Always use HIGH intent score
+3. After creation, poll GET /audiences/:id to check hydration status
+4. Do NOT create duplicate audiences -- check existing list first
+5. Requires AUDIENCE_LAB_PASSWORD in .env for login
