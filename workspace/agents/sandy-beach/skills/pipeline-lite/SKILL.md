@@ -54,7 +54,7 @@ Templates require owner review before push to production fleet.
 
 - SMS (primary) via Twilio
 - WhatsApp via Twilio (16MB media cap, ~$0.016/message for marketing templates)
-- Email via ZapMail provisioning (or GHL native)
+- Email via GHL Domain Setup (automated domain purchase & email sending domain config)
 
 ## Quirks
 
